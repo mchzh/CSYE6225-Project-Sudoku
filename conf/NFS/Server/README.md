@@ -1,4 +1,4 @@
-How To Set Up an NFS Mount on Ubuntu instance of AWS
+# How To Set Up an NFS Mount on Ubuntu instance of AWS
 
 Introduction
 NFS, or Network File System, is a distributed filesystem protocol that allows you to mount remote directories on your server. This allows you to leverage storage space in a different location and to write to the same space from multiple servers easily. NFS works well for directories that will have to be accessed regularly.
