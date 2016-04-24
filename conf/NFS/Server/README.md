@@ -20,7 +20,7 @@ On the client computer, we're going to have to install a package called nfs-comm
   sudo apt-get update
   sudo apt-get install nfs-common
 
-Create the Share Directory on the Host Server
+## Create the Share Directory on the Host Server
 We create NFS root directory-/srv/nfs4 and share /mnt/Sudoku
 sudo mkdir -p /srv/nfs4/sudoku
 sudo mkdir -p /mnt/sudoku
@@ -32,7 +32,8 @@ sudo vi /etc/fstab
 
 sudo service nfs-kernel-server restart
 sudo showmount -e
-Configure the NFS Exports on the Host Server
+
+## Configure the NFS Exports on the Host Server
 Now that we have our directories created and assigned, we can dive into the NFS configuration file to set up the sharing of these resources.
 Add the permitted-mount directory and machine to exports
 sudo vi /etc/exports
@@ -41,7 +42,8 @@ sudo vi /etc/exports
 Next, you should create the NFS table that holds the exports of your shares by typing:
 sudo exports –ra
 sudo service nfs-kernel-server restart
-Test NFS Access in Host Server
+
+## Test NFS Access in Host Server
 
 Our design is that to create NFS root directory bind another mount directory, so we need copy different file into this two directory separately and to check whether another directory will update this copy file. Also you can test the access to your shares by writing something to your shares. 
 sudo cp /home/ubuntu/load.sh /mnt/sudoku/.
