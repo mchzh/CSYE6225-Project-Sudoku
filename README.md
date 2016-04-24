@@ -14,6 +14,12 @@ setup your git repo:
 
 git config --global user.name "yourusername"
 git config --global user.email "youremail"
-git clone 
-https://github.com/mchzh/CSYE6225-Project-Sudoku.git
-cd to UnixSysProgramming
+git clone https://github.com/mchzh/CSYE6225-Project-Sudoku.git
+cd to CSYE6225-Project-Sudoku
+when you chang any code you want to upload your changes:
+git add xx
+git commit -m 'change reason interpret'
+After commit, you must also push your change to remote repository:
+git remote add origin https://github.com/mchzh/CSYE6225-Project-Sudoku.git 
+git push origin master
+https://gist.github.com/suziewong/4378619
