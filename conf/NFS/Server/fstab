@@ -1,0 +1,2 @@
+LABEL=cloudimg-rootfs	/	 ext4	defaults,discard	0 0
+/mnt/sudoku /srv/nfs4/sudoku none bind 0 0
