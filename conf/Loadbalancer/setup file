@@ -105,8 +105,9 @@ STEP 4: Change to the root user
     VIP - This should point to private virtual IP address that will float between the two primary load balancer    
     REGION - This should point to region where your load balancers are running (example :us-west-2).
 
-
-
+After completing all the above steps, you can test your setup by shutting down the primary load balancer. You will see that 
+the request are processed even though the primary load balancer was shut down. The monitoring system understands that is the 
+primary load balancer is unhealthy and diverts all the incoming traffic to the seconday load balancer. 
 
         
         
