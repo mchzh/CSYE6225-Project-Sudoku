@@ -20,7 +20,7 @@ when you chang any code you want to upload your changes:
 git add xx
 git commit -m 'change reason interpret'
 After commit, you must also push your change to remote repository:
-git remote add origin https://github.com/mchzh/CSYE6225-Project-Sudoku.git 
+git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 git push origin master
-https://gist.github.com/suziewong/4378619
+[SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 
