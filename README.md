@@ -68,7 +68,7 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
        
        Total disk space    7.8G (df -hl)
         
-   (2) Application Instance
+   (2) Application and file server Instance
        
        Instance type : t2.micro
        
