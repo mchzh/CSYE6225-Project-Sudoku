@@ -1,2 +1,0 @@
-LABEL=cloudimg-rootfs	/	 ext4	defaults,discard	0 0
-52.25.162.1:/sudoku /var/www/html/sudoku nfs rsize=8192,wsize=8192,timeo=14,intr 0 0
