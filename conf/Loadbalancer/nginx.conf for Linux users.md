@@ -2,13 +2,13 @@
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
-```
-```
+
+
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
 pid /var/run/nginx.pid;
-```
+
 events {
     worker_connections 1024;
 }
@@ -36,12 +36,12 @@ http {
 
     index   index.html index.htm;
 
-      <pre>
-      <b>upstream backend{
+      upstream backend
+      {
 	server 172.31.32.77; 
 	server 172.31.40.103;  
-	}</b> 
-       </pre>
+	}
+       
      
      server {
         listen       80 default_server;
