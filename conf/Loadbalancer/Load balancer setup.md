@@ -23,6 +23,7 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
        
         vi nginx.conf    #I'm choosing vi as my editors as it is convenient , you can choose any editor of your preferance
         ```
+	
 	To start using NGINX with a group of servers, first, you need to define the group with the upstream directive. The 
 	directive is placed in the http context.Servers in the group are configured using the server directive. 
 	For example, In the below description the following configuration defines a group named backend and consists of two 
@@ -31,6 +32,7 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
         NGINX passes all requests to the backend server group that you will be defining
         
 	Inside the nginx.conf file under the "http" section add the following lines:
+        
         ```
         upstream backend{
         server 172.31.xxx.xxx;  #insert the private ip address of your web servers
@@ -41,8 +43,10 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
             proxy_pass http://backend;
         }
         ```
+  	
   	Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take
         place
+        
         ```
         sudo service nginx restart
         ```
@@ -70,6 +74,7 @@ STEP 1: Create an EC2 AWS Identity and Access Management (IAM) role that will au
         Console, click  Roles in the navigation pane, and click Create New Role.Give the new role a descriptive name 
         (HA_Monitor in this example) and click Continue.Navigate to the "Inline Policy" section of the role that you just 
         created and select "Custom Policy".Enter the following for the policy document:
+					 
 					 	```
 					 	{
 						 "Statement": [
