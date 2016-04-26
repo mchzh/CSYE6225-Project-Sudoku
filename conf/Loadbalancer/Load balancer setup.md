@@ -1,38 +1,41 @@
-This document shows the set up a single load balancer and setup of a high-availability load balancer 
+#####This document shows the set up a single load balancer and setup of a high-availability load balancer 
 
 
-Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances in the cloud. 
+######Elastic Load Balancing automatically distributes incoming application traffic across multiple Amazon EC2 instances in the cloud. 
 It enables you to achieve greater levels of fault tolerance in your applications, seamlessly providing the required amount of load 
 balancing capacity needed to distribute application traffic.
 
-We will be using nginx as our load balancer. Nginx (pronounced "engine x") is a web server. It can act as a reverse proxy server 
+######We will be using nginx as our load balancer. Nginx (pronounced "engine x") is a web server. It can act as a reverse proxy server 
 for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.
 
-SETTING A SINGLE LOAD BALANCER:
+#####SETTING A SINGLE LOAD BALANCER:
 
-The procedure described below is for both linux and ubuntu instances:
+######The procedure described below is for both linux and ubuntu instances:
 
-STEP 1: sudo yum update (for linux users)
-        sudo apt-get update (for ubuntu users)
+######STEP 1: ```
+	       sudo yum update   # update your instance
+              ```
 
-STEP 2: sudo yum install nginx (for linux users)
-        sudo apt-get install nginx (for ubuntu users)
+######STEP 2: ```
+		sudo yum install nginx   #install nginx
+		```
         
-STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
         
+######STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
+        ```
         cd /etc/nginx
        
-        vi nginx.conf (I'm choosing vi as my editors as it is convenient , you can choose any editor of your preferance)
-        
-        To start using NGINX with a group of servers, first, you need to define the group with the upstream directive. The 
+        vi nginx.conf    #I'm choosing vi as my editors as it is convenient , you can choose any editor of your preferance
+        ```
+  ######To start using NGINX with a group of servers, first, you need to define the group with the upstream directive. The 
         directive is placed in the http context.Servers in the group are configured using the server directive. 
         For example, In the below description the following configuration defines a group named backend and consists of two 
         server configurations.
         To pass requests to a server group, the name of the group is specified in the proxy_pass directive.Server running on 
         NGINX passes all requests to the backend server group that you will be defining
         
-        Inside the nginx.conf file under the "http" section add the following lines:
-        
+###### Inside the nginx.conf file under the "http" section add the following lines:
+       ``` 
         upstream backend{
         server 172.31.xxx.xxx;  #insert the private ip address of your web servers
         server 172.31.xxx.xxx;
@@ -41,12 +44,12 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
          location /{
             proxy_pass http://backend;
         }
- 
-.       Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take
+ ```
+######  Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take
         place
-        
+        ```
         sudo service nginx restart
-        
+        ```
         
 SETTING UP A HIGH-AVAILABILITY LOAD BALANCER:
 
