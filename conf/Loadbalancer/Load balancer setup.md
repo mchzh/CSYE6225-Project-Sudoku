@@ -18,11 +18,11 @@ STEP 1: ```sudo yum update   # update your instance```
 STEP 2: ```sudo yum install nginx   #install nginx```
         
 STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
-        ```
-        cd /etc/nginx
+        
+     ```cd /etc/nginx```
        
-        vi nginx.conf    #I'm choosing vi as my editors as it is convenient , you can choose any editor of your preferance
-        ```
+     ```vi nginx.conf    #I'm choosing vi as my editors as it is convenient , you can choose any editor of your preferance```
+        
 	
 	To start using NGINX with a group of servers, first, you need to define the group with the upstream directive. The 
 	directive is placed in the http context.Servers in the group are configured using the server directive. 
@@ -47,9 +47,8 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
   	Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take
         place
         
-        ```
-        sudo service nginx restart
-        ```
+        ```sudo service nginx restart```
+        
 
 #####SETTING UP A HIGH-AVAILABILITY LOAD BALANCER:
 
