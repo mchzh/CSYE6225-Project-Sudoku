@@ -1,4 +1,4 @@
-Watch the vip_monitor.log file on secondary load balancer while you restart primary load balancer and observe the script take over
+Watch the vip_monitor.log file on secondary load balancer while you shutdown primary load balancer and observe the script take over
 the VIP.
 
 Primary load balancer:
