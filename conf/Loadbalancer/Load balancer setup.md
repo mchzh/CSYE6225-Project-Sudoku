@@ -9,16 +9,16 @@ We will be using nginx as our load balancer. Nginx (pronounced "engine x") is a 
 
 The procedure described below is for both linux and ubuntu instances:
 	
-STEP 1: sudo yum update   		#update your instance
+STEP 1: ```sudo yum update   		#update your instance```
         
         
-STEP 2: sudo yum install nginx   	#install nginx
+STEP 2: ``sudo yum install nginx   	#install nginx```
         
 STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
         
-cd /etc/nginx
+```cd /etc/nginx```
       	
-vi nginx.conf
+```vi nginx.conf```
         
 	
 To start using NGINX with a group of servers, first, you need to define the group with the upstream directive. The directive is placed in the http context.Servers in the group are configured using the server directive. For example, In the below description the following configuration defines a group named "backend" and consists of two server configurations.To pass requests to a server group, the name of the group is specified in the proxy_pass directive.Server running on NGINX passes all requests to the backend server group that you will be defining.
@@ -88,11 +88,11 @@ STEP 5: After step 4 access your instances and do the following:
 	
 Change to the root user
 
-sudo -s 
+```sudo -s ```
 	
 Change to root directory
 
-cd /root
+```cd /root```
 	
 download the vip_monitor.sh script, and make it executable with the following commands:
 
@@ -100,27 +100,27 @@ download the vip_monitor.sh script, and make it executable with the following co
 	
 change the permission on the file
 
-chmod a+x vip_monitor.sh
+```chmod a+x vip_monitor.sh```
 	
 NOTE:vip_monitor.sh is a virtual IP monitor and takeover script.This script enables one Amazon EC2 instance to monitor 
 another Amazon EC2 instance and take over a private "virtual" IP address on instance failure. When used with two instances, the script enables an HA (High-availability) scenario where instances monitor each other and take over a shared virtual IP address if the other instance fails.
 
 Edit the following variables to match your settings for primary load balancer:
 	
-HA_Node_IP - This should point to secondary load balancer primary private IP address.
+**HA_Node_IP** - This should point to secondary load balancer primary private IP address.
 
-VIP - This should point to private virtual IP address that will float between the two load balancers.
+**VIP** - This should point to private virtual IP address that will float between the two load balancers.
 
-REGION - This should point to region where your load balancers are running (example :us-west-2).
+**REGION** - This should point to region where your load balancers are running (example :us-west-2).
 	
 Now connect to secondary load balancer and issue the same commands as you did previously on primary load balancer. 
 However, in this case, configure vip_monitor.sh with the following settings:
 	
-HA_Node_IP - This should point to primary load balancer primary private IP address.
+**HA_Node_IP** - This should point to primary load balancer primary private IP address.
 
-VIP - This should point to private virtual IP address that will float between the two primary load balancer    
+**VIP** - This should point to private virtual IP address that will float between the two primary load balancer    
 
-REGION - This should point to region where your load balancers are running (example :us-west-2).
+**REGION** - This should point to region where your load balancers are running (example :us-west-2).
 
 After completing all the above steps, you can test your setup by shutting down the primary load balancer. Once you shutdown the primary load balancer, the virtual IP address is allocated to the secondary load balancer and all the traffic is redirected to the secondary load balancer. Kindly check the "Testing your high availability load balancer" for reference.
 
