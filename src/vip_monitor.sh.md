@@ -1,3 +1,5 @@
+```
+
 #!/bin/sh
 # This script will monitor another HA node and take over a Virtual IP (VIP)
 # if communication with the other node fails
@@ -49,3 +51,4 @@ while [ . ]; do
  fi
  sleep 2
 done
+```
