@@ -41,7 +41,15 @@ git push origin master
    /document : all description documentation of this project
 3. AWS VM description
    In this project, we use two type VM : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2"(for LB) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-9abea4fb"(for apache and file server).
-   
+   (1) LB Instance
+   (2) Application Instance
+       Instance type : t2.micro
+       Sytem info : Linux version 3.13.0-83-generic (buildd@lgw01-55) (gcc version 4.8.2 (Ubuntu 4..2-19ubuntu1) ) #127-Ubuntu SMP Fri Mar 11 00:25:37 UTC 2016 (uname -a)
+       Version : Ubuntu 14.04.4 LTS (head -n 1 /etc/issue )
+       Cpu cores       : 1 (cat /proc/cpuinfo | grep -i cpu)
+       Mem:           992  (free -m)
+       /dev/xvda1      7.8G (df -hl)
+
 4. 
 
 (1) launch a VM (required size based not eh capacity model you have, it will be good if you submit it also in a separate file) (2) configure the VM with something (VNET, disk, etc). (3) on the development station (your Mac) do : 3.1, 3.2, 3.3….
