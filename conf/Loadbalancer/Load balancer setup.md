@@ -84,7 +84,7 @@ STEP 2: Launch two EC2 instance and configure them as a load balancers by follow
 is your primary load balancer and the other one is secondary load balancer.
 NOTE:Choose the IAM role as the one that you have created in STEP 1 when launching the EC2 instances
 
-STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" andselect "Manage private IP addresses".Select "Assign new IP" and click "Yes,Update". This new secondary private IP 		will act as the viraul IP that floats between the two load balancers. 
+STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" andselect "Manage private IP addresses".Select "Assign new IP" and click "Yes,Update". This new secondary private IP will act as the virtual IP that floats between the two load balancers. 
 
 STEP 4: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs".Click on "Allocate New Address" and choose your 
 instances.By default an Elastic IP is allocated to the primary private IP of your primary load balancer, to assign an Elastic IP to the seconday private IP you click "ALlocate New Address" again and choose the primary load balancer.Repeat the above step for the secondary load balancer but only once since we did not assign any secondary private IP address
@@ -92,15 +92,19 @@ instances.By default an Elastic IP is allocated to the primary private IP of you
 STEP 5: After step 4 access your instances and do the following:
 	
 Change to the root user
+
 sudo -s 
 	
 Change to root directory
+
 cd /root
 	
 download the vip_monitor.sh script, and make it executable with the following commands:
+
 ```wget http://media.amazonwebservices.com/articles/vip_monitor_files/vip_monitor.sh```
 	
 change the permission on the file
+
 chmod a+x vip_monitor.sh
 	
 NOTE:vip_monitor.sh is a virtual IP monitor and takeover script.This script enables one Amazon EC2 instance to monitor 
