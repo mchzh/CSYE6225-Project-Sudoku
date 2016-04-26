@@ -48,8 +48,11 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
 -----
 ##3. AWS VM description
    In this project, we use two types of Virtual machines : 
-   one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type-ami-c229c0a2"(for Load Balancer) 
-   and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type-ami-9abea4fb"(for apache web server and file server).
+   
+   "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type-ami-c229c0a2"(for Load Balancer) 
+   
+   "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type-ami-9abea4fb"(for apache web server and file server).
+   
    
    (1) Load Balancer Instance
        
