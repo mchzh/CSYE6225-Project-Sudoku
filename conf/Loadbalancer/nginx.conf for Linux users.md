@@ -39,7 +39,7 @@ http {
 
       upstream backend
       {
-	server 172.31.XXX.XXX;      		#place your backend server private IP addresses here 
+	server 172.31.XXX.XXX;      		#place your backend servers private IP addresses here 
 	server 172.31.XXX.XXX;  
 	}
        
@@ -54,7 +54,7 @@ http {
         include /etc/nginx/default.d/*.conf;
 
         location /{
-	    proxy_pass http://backend; 		# this will pass all the incoming requests to the backend servers
+	    proxy_pass http://backend; 		# this directive will pass all the incoming requests to the backend servers
         }
 
         # redirect server error pages to the static page /40x.html
