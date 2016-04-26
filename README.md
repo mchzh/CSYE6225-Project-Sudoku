@@ -38,7 +38,11 @@ git push origin master
    /src : Source program code of project, and include php, shell script etc.
    /conf : Configure file of project
    /log : every service log file including nginx, apache2, and HA etc.
-3. 
+   /document : all description documentation of this project
+3. AWS VM description
+   In this project, we use two type VM : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2"(for LB) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-9abea4fb"(for apache and file server).
+   
+4. 
 
 (1) launch a VM (required size based not eh capacity model you have, it will be good if you submit it also in a separate file) (2) configure the VM with something (VNET, disk, etc). (3) on the development station (your Mac) do : 3.1, 3.2, 3.3….
 (4) how to download into github to your repo. (git pull….) (5) install some components e.g. php, apache nginx etc. (6) how to start your app/service. more importantly how to make it start automatically with no user push anything (etc/init.d …)
