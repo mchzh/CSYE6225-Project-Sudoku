@@ -9,6 +9,7 @@ worker_processes auto;
 error_log /var/log/nginx/error.log;
 pid /var/run/nginx.pid;
 
+
 events {
     worker_connections 1024;
 }
@@ -38,8 +39,8 @@ http {
 
       upstream backend
       {
-	server 172.31.32.77; 
-	server 172.31.40.103;  
+	server 172.31.XXX.XXX;      		#place your backend server IP addresses here 
+	server 172.31.XXX.XXX;  
 	}
        
      
@@ -53,7 +54,7 @@ http {
         include /etc/nginx/default.d/*.conf;
 
         location /{
-	    proxy_pass http://backend;
+	    proxy_pass http://backend; 		# this will pass all the incoming requests to the backend servers
         }
 
         # redirect server error pages to the static page /40x.html
