@@ -12,10 +12,10 @@ for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and 
 
 The procedure described below is for both linux and ubuntu instances:
 	
-STEP 1: sudo yum update   ###### update your instance
+STEP 1: sudo yum update   #update your instance
         
         
-STEP 2: sudo yum install nginx   ######install nginx
+STEP 2: sudo yum install nginx   #install nginx
         
 STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
         cd /etc/nginx
