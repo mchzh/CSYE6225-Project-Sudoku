@@ -64,7 +64,9 @@ git push origin master
    [LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
 
    More details go to /conf/Loadbalancer/nginx.conf for Linux users.md
-5. 
+5. Install and configure application
+   
+6. Install and configure file server and client
 
 
 (1) launch a VM (required size based not eh capacity model you have, it will be good if you submit it also in a separate file) (2) configure the VM with something (VNET, disk, etc). (3) on the development station (your Mac) do : 3.1, 3.2, 3.3….
