@@ -11,5 +11,7 @@ Connect to file system:
 4. sudo mount -t nfs 54.201.110.215:/sudoku ./sudoku
 
 Upload file:
-In sudoku.php file, once I've got a new sudoku result, I'll use fopen() function to create new ".txt" file into the "sudoku" folder and use the content of this sudoku as the file name to avoid duplicate.
-Since "sudoku" folder is mounted to the file server, that file will be directly uploaded to file server. Then I use fwrite() function to store the sudoku result into that file. In this way, the sudoku answer is successfully saved in the file system.
+1. Once got a new sudoku result, use fopen() function to create txt file into "sudoku" folder.
+2. Use the content of this sudoku as the file name to avoid duplicate.
+3. Since "sudoku" folder is mounted to the file server, that file will be directly uploaded to file server.
+4. Then use fwrite() function to write the data of sudoku result into that file.
