@@ -50,9 +50,9 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
         
 SETTING UP A HIGH-AVAILABILITY LOAD BALANCER:
 
-If one of your application server is down, you have a back up server that has the same application running on it to. But what if 
-the load balancer that is distributing the traffic across the backend servers fails? If the load balancer fails then none of 
-your clients can access the application. The solution is to have two load balancers, one primary and the other is secondary (backup). 
+If one of your application server is down, you have a back up server that has the same application running on it to take over. 
+But what if the load balancer that is distributing the traffic across the backend servers fails? If the load balancer fails then 
+none of your clients can access the application. The solution is to have two load balancers, one primary and the other is secondary (backup). 
 
 IMPLEMENTATION:
 We have a virtual IP that floats between the two load balancers. Initially the virtual IP is assigned to your primary load
@@ -61,25 +61,46 @@ is unhealthy the monitoring system will recognize this and assigns the virtual I
 charge of the incoming traffic.When the primary load balancer is healthy the monitoring system will assign the virtual IP to the 
 primary load balancer diverting all the incoming traffic to it.
 
-To achieve the above architecture we require Elastic IP addresses and a script:
+To achieve the above architecture we require Elastic IP addresses and a shell script for monitoring (vip_monitor.sh):
 
 An Elastic IP address is a static IP address designed for dynamic cloud computing. With an Elastic IP address, you can mask 
 the failure of an instance or software by rapidly remapping the address to another instance in your account.An Elastic IP 
 address is a public IP address, which is reachable from the Internet. 
 
-STEP 1: Create another load balancer by following the above procedure
+STEP 1: Create an EC2 AWS Identity and Access Management (IAM) role that will authorize our EC2 instances 
+        to be able to take over the VIP in the event that the other EC2 instance fails. 
+      Navigate to the IAM console in the AWS Management Console, click  Roles in the navigation pane, and click Create New Role.
+      Give the new role a descriptive name (HA_Monitor in this example) and click Continue. 
+      Navigate to the inline policy section of the role that you just created and select "Custom Policy"
+      Enter the following for the policy document:
+					 	{
+						 "Statement": [
+						 {
+						 "Action": [
+						 "ec2:AssignPrivateIpAddresses",
+						 "ec2:DescribeInstances"
+						 ],
+						 "Effect": "Allow",
+						 "Resource": "*"
+						 }
+						 ]
+						}
+      
 
-STEP 2: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" and select
+STEP 2: Create another load balancer by following the above procedure
+	NOTE:Choose the IAM role as the one that you have created in STEP 1 when creating the both the EC2 instance
+
+STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" and select
 	"Manage private IP addresses"
 	select "Assign new IP" and click "Yes,Update" 
 	NOTE: This new secondary private IP will act as the viraul IP that floats between the two load balancers
 
-STEP 3: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs"
+STEP 4: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs"
 	click on "Allocate New Address" and choose your instances
 	By default an Elastic IP is allocated to the private IP of your primary load balancer, to assign an Elastic IP to the
-	seconday private IP you click "ALlocate New Address" and choose the primary load balancer.
+	seconday private IP you click "ALlocate New Address" again and choose the primary load balancer.
 	
-STEP 4: Change to the root user
+STEP 5: Change to the root user
 	sudo -s
 	Change to root directory
 	cd /root
@@ -105,9 +126,9 @@ STEP 4: Change to the root user
     VIP - This should point to private virtual IP address that will float between the two primary load balancer    
     REGION - This should point to region where your load balancers are running (example :us-west-2).
 
-After completing all the above steps, you can test your setup by shutting down the primary load balancer. You will see that 
-the request are processed even though the primary load balancer was shut down. The monitoring system understands that is the 
-primary load balancer is unhealthy and diverts all the incoming traffic to the seconday load balancer. 
+After completing all the above steps, you can test your setup by shutting down the primary load balancer. Once you shutdown the
+primary load balancer, the virtual IP address is allocated to the secondary load balancer and all the traffic is sent to the 
+secondary load balancer
 
         
         
