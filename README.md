@@ -1,59 +1,69 @@
 #  CSYE6225-Project-Sudoku
 Cloud Coumputing Project for the Algorithm Forum
 
-In this project, it include source, configure and documentation file etc.
+The project includes source, configuration and documentation files.
 
 -----
-##1. how to get github resource 
+##1. How to extract github resource 
 
-Install git and gcc for viewing and compiling the code. I assume you have Debian or Ubuntu:
+Install git and gcc for viewing and compiling the code. Follow the steps mentioned below (I assume you have Debian or Ubuntu):
 
-sudo apt-get install git gcc
+```sudo apt-get install git gcc```
 
 setup your git repo:
 
-git config --global user.name "yourusername"
+```git config --global user.name "yourusername"```
 
-git config --global user.email "youremail"
+```git config --global user.email "youremail"```
 
-git clone [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
+```git clone [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)```
 
-cd to CSYE6225-Project-Sudoku
+```cd CSYE6225-Project-Sudoku```
 
-when you chang any code you want to upload your changes:
+When you  want to upload any changes to your code:
 
-git add xx
+```git add xx```
 
-git commit -m 'change reason interpret'
+```git commit -m 'change reason interpret'```
 
-After commit, you must also push your change to remote repository:
+After you commit your changes, you must push your edited file to a remote repository:
 
-git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
+```git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)```
 
 git push origin master
+
 [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 
 -----
-##2. Directory interpret
+##2. Directory interpretation
    
-   /bin : Excute binary code of project
+   /bin : Binary code of project
    
-   /src : Source program code of project, and include php, shell script etc.
+   /src : Source code of project which includes php and shell script.
    
-   /conf : Configure file of project
+   /conf : Configuration files of the project
    
-   /log : every service log file including nginx, apache2, and HA etc.
+   /log :  Service log file 
    
-   /document : all description documentation of this project
+   /document :  Description documents of the project
 
 -----
 ##3. AWS VM description
-   In this project, we use two type VM : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2"(for LB) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-9abea4fb"(for apache and file server).
+   In this project, we use two types of Virtual machines : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type-ami-c229c0a2"(for Load Balancer) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type-ami-9abea4fb"(for apache and file server).
    
-   (1) LB Instance
-
+   (1) Load Balancer Instance
+       
+       Instance type : t2.micro
+       
+       system info: Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2
+       
+       COU cores:    1
+       
+       Mem:          1 GiB 
+       
+        
    (2) Application Instance
-   
+       
        Instance type : t2.micro
        
        Sytem info : Linux version 3.13.0-83-generic (buildd@lgw01-55) (gcc version 4.8.2 (Ubuntu 4..2-19ubuntu1) ) #127-Ubuntu SMP Fri Mar 11 00:25:37 UTC 2016 (uname -a)
