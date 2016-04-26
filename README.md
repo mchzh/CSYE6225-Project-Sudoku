@@ -60,8 +60,10 @@ git push origin master
        /dev/xvda1      7.8G (df -hl)
 
 4. Set loadbalance high availibility
+
    [LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
-   More details go to /conf/
+
+   More details go to /conf/Loadbalancer/nginx.conf for Linux users.md
 5. 
 
 
