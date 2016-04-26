@@ -46,6 +46,7 @@ Save the nginx.conf file after you have finished editing it. You need to restart
 If one of your application server is down, you have a back up server that has the same application running on it to take over. But what if the load balancer that is distributing the traffic across the backend servers fails? If the load balancer fails then none of your clients can access the application. The solution is to have two load balancers, one primary and the other is secondary (backup). 
 
 IMPLEMENTATION:
+
 We have a virtual IP that floats between the two load balancers. Initially the virtual IP is assigned to your primary load
 balancer. A monitoring system is put in place that checks the health of the two load balancers. If the primary load balancer 
 is unhealthy the monitoring system will recognize this and assigns the virtual IP to the secondary load balancer which takes 
