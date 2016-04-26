@@ -7,7 +7,7 @@ We will be using nginx as our load balancer. Nginx (pronounced "engine x") is a 
 
 #####SETTING A SINGLE LOAD BALANCER:
 
-The procedure described below is for both linux and ubuntu instances:
+The procedure described below is for both linux instances:
 	
 STEP 1: ```sudo yum update   		#update your instance```
         
