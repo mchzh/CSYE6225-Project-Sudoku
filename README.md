@@ -35,10 +35,15 @@ git push origin master
 
 -----
 ##2. Directory interpret
+   
    /bin : Excute binary code of project
+   
    /src : Source program code of project, and include php, shell script etc.
+   
    /conf : Configure file of project
+   
    /log : every service log file including nginx, apache2, and HA etc.
+   
    /document : all description documentation of this project
 
 -----
