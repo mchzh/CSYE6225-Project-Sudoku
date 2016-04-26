@@ -4,8 +4,12 @@ Install apache and php:
 3. sudo apt-get install php5
 4. sudo apt-get install libapache2-mod-php5 php5-mcrypt
 
-Connect to file server:
+Connect to file system:
 1. sudo apt-get install nfs-common
 2. cd /var/www/html
 3. sudo mkdir -p sudoku
 4. sudo mount -t nfs 54.201.110.215:/sudoku ./sudoku
+
+Upload file:
+In sudoku.php file, once I've got a new sudoku result, I'll use fopen() function to create new ".txt" file into the "sudoku" folder and use the content of this sudoku as the file name to avoid duplicate.
+Since "sudoku" folder is mounted to the file server, that file will be directly uploaded to file server. Then I use fwrite() function to store the sudoku result into that file. In this way, the sudoku answer is successfully saved in the file system.
