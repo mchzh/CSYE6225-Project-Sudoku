@@ -2,12 +2,13 @@
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
-
+```
+```
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
 pid /var/run/nginx.pid;
-
+```
 events {
     worker_connections 1024;
 }
@@ -90,7 +91,7 @@ http {
         #    deny  all;
         #}
     }
-
+```
 # Settings for a TLS enabled server.
 #
 #    server {
