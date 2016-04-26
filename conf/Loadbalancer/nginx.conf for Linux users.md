@@ -39,7 +39,7 @@ http {
 
       upstream backend
       {
-	server 172.31.XXX.XXX;      		#place your backend server IP addresses here 
+	server 172.31.XXX.XXX;      		#place your backend server private IP addresses here 
 	server 172.31.XXX.XXX;  
 	}
        
