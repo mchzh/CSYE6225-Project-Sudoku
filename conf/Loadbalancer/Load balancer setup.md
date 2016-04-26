@@ -12,10 +12,10 @@ for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and 
 
 The procedure described below is for both linux and ubuntu instances:
 	
-STEP 1: ```sudo yum update   # update your instance```
+STEP 1: sudo yum update   ###### update your instance
         
         
-STEP 2: ```sudo yum install nginx   #install nginx```
+STEP 2: sudo yum install nginx   ######install nginx
         
 STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
         cd /etc/nginx
@@ -32,7 +32,7 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
         
 	Inside the nginx.conf file under the "http" section add the following lines:
         
-        ```
+        
         upstream backend{
         server 172.31.xxx.xxx;  #insert the private ip address of your web servers
         server 172.31.xxx.xxx;
@@ -41,12 +41,12 @@ STEP 3: We have to configure nginx to act as a load balancer, to do this we need
          location /{
             proxy_pass http://backend;
         }
-        ```
+        
   	
   	Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take
         place
         
-        ```sudo service nginx restart```
+        sudo service nginx restart
         
 
 #####SETTING UP A HIGH-AVAILABILITY LOAD BALANCER:
@@ -73,7 +73,7 @@ STEP 1: Create an EC2 AWS Identity and Access Management (IAM) role that will au
         (HA_Monitor in this example) and click Continue.Navigate to the "Inline Policy" section of the role that you just 
         created and select "Custom Policy".Enter the following for the policy document:
 					 
-					 	```
+					 	
 					 	{
 						 "Statement": [
 						 {
@@ -86,7 +86,7 @@ STEP 1: Create an EC2 AWS Identity and Access Management (IAM) role that will au
 						 }
 						 ]
 						}
-      						```
+      						
 
 STEP 2: Launch two EC2 instance and configure them as a load balancers by following the procedure above. One of the instances
 	is your primary load balancer and the other one is secondary load balancer.
@@ -102,16 +102,16 @@ STEP 4: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs".Click 
 STEP 5: After step 4 access your instances and do the following:
 	
 	Change to the root user
-	``` sudo -s ```
+	 sudo -s 
 	
 	Change to root directory
-	``` cd /root```
+	cd /root
 	
 	download the vip_monitor.sh script, and make it executable with the following commands:
-	```wget http://media.amazonwebservices.com/articles/vip_monitor_files/vip_monitor.sh```
+	wget http://media.amazonwebservices.com/articles/vip_monitor_files/vip_monitor.sh
 	
 	change the permission on the file
-	```chmod a+x vip_monitor.sh```
+	chmod a+x vip_monitor.sh
 	
 	NOTE:vip_monitor.sh is a virtual IP monitor and takeover script.This script enables one Amazon EC2 instance to monitor 
 	another Amazon EC2 instance and take over a private "virtual" IP address on instance failure. When used with two 
