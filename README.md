@@ -87,7 +87,7 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
 
    For details go to /conf/Loadbalancer/nginx.conf for Linux users.md
    
-   reference :[Loal Balance Hight Availability configuration](https://aws.amazon.com/articles/2127188135977316)
+   reference :[Load Balancer Hight Availability configuration](https://aws.amazon.com/articles/2127188135977316)
 
    
 -----
