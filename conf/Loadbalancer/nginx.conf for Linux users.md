@@ -35,10 +35,13 @@ http {
 
     index   index.html index.htm;
 
-      upstream backend{
+      <pre>
+      <b>upstream backend{
 	server 172.31.32.77; 
 	server 172.31.40.103;  
-	}
+	}</b> 
+       </pre>
+     
      server {
         listen       80 default_server;
         listen       [::]:80 default_server;
