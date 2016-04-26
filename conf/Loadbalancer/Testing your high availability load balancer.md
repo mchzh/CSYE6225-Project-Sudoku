@@ -1,7 +1,6 @@
-###Watch the vip_monitor.log file on secondary load balancer while you shutdown primary load balancer and observe the script take over
-the VIP.
+####Watch the vip_monitor.log file on secondary load balancer while you shutdown primary load balancer and observe the script take over the VIP.
 
-####Primary load balancer:
+#####Primary load balancer:
 ```
 [root@ip-10-0-0-11 ~]# shutdown -r now 
 [root@ip-10-0-0-11 ~]# 
@@ -11,7 +10,7 @@ Broadcast message from ec2-user@ip-10-0-0-11
 The system is going down for reboot NOW!
 ```
 
-####Secondary load balancer:
+#####Secondary load balancer:
 ```
 [root@ip-10-0-0-12 ~]# tail -f /tmp//vip_monitor.log 
 Mon Apr 23 14:28:18 UTC 2016 -- Starting HA monitor
