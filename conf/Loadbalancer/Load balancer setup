@@ -134,7 +134,7 @@ STEP 5: After step 4 access your instances and do the following:
 After completing all the above steps, you can test your setup by shutting down the primary load balancer. Once you shutdown the
 primary load balancer, the virtual IP address is allocated to the secondary load balancer and all the traffic is redirected 
 to the secondary load balancer
-Kindly check the "test your configuration" for detailed explanation
+Kindly check the "Testing your high availability load balancer" for detailed explanation
 
         
         
