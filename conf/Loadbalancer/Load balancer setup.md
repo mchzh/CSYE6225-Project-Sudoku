@@ -11,12 +11,12 @@ for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and 
 #####SETTING A SINGLE LOAD BALANCER:
 
 The procedure described below is for both linux and ubuntu instances:
-
-STEP 1: ```sudo yum update   # update your instance
-        ```
-        ```
-STEP 2: sudo yum install nginx   #install nginx
-        ```
+	
+STEP 1: ```sudo yum update   # update your instance```
+        
+        
+STEP 2: ```sudo yum install nginx   #install nginx```
+        
 STEP 3: We have to configure nginx to act as a load balancer, to do this we need to access the nginx.conf file
         ```
         cd /etc/nginx
@@ -89,15 +89,12 @@ STEP 2: Launch two EC2 instance and configure them as a load balancers by follow
 	is your primary load balancer and the other one is secondary load balancer.
 	NOTE:Choose the IAM role as the one that you have created in STEP 1 when launching the EC2 instances
 
-STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" and select
-	"Manage private IP addresses".Select "Assign new IP" and click "Yes,Update". This new secondary private IP will act as 
-	the viraul IP that floats between the two load balancers. 
+STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" and 		select "Manage private IP addresses".Select "Assign new IP" and click "Yes,Update". This new secondary private IP 		will act as the viraul IP that floats between the two load balancers. 
 
 STEP 4: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs".Click on "Allocate New Address" and choose your 
 	instances.By default an Elastic IP is allocated to the primary private IP of your primary load balancer, to assign an 
 	Elastic IP to the seconday private IP you click "ALlocate New Address" again and choose the primary load balancer.
-	Repeat the above step for the secondary load balancer but only once since we did not assign any secondary private IP	
-	address
+	Repeat the above step for the secondary load balancer but only once since we did not assign any secondary private IP	address
 	
 STEP 5: After step 4 access your instances and do the following:
 	
@@ -130,7 +127,7 @@ STEP 5: After step 4 access your instances and do the following:
 	
 	Now connect to secondary load balancer and issue the same commands as you did previously on primary load balancer. 
 	However, in this case, configure vip_monitor.sh with the following settings:
-
+	
     	HA_Node_IP - This should point to primary load balancer primary private IP address.
     	VIP - This should point to private virtual IP address that will float between the two primary load balancer    
     	REGION - This should point to region where your load balancers are running (example :us-west-2).
