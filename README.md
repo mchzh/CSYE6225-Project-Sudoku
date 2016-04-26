@@ -67,6 +67,7 @@ git push origin master
    [LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
 
    More details go to /conf/Loadbalancer/nginx.conf for Linux users.md
+
 -----
 #5. Install and configure application
  
