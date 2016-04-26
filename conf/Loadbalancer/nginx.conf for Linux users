@@ -38,6 +38,7 @@ http {
 	server 172.31.XXX.XXX; 
 	server 172.31.XXX.XXX;  
 	}
+	<span style="background-color: #FFFF00">Marked text</span>
      server {
         listen       80 default_server;
         listen       [::]:80 default_server;
