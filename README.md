@@ -1,5 +1,4 @@
 #  CSYE6225-Project-Sudoku
-Cloud Coumputing Project for the Algorithm Forum
 
 The project includes source, configuration and documentation files.
 
