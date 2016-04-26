@@ -20,19 +20,17 @@ setup your git repo:
 
 ```cd CSYE6225-Project-Sudoku```
 
-When you  want to upload any changes to your code:
+When you want to upload any changes to your code:
 
 ```git add xx```
 
-```git commit -m 'change reason interpret'```
+```git commit -m ```
 
 After you commit your changes, you must push your edited file to a remote repository:
 
 git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 
-git push origin master
-
-[SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
+git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 
 -----
 ##2. Directory interpretation
@@ -57,10 +55,13 @@ git push origin master
        
        system info: Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2
        
-       COU cores:    1
+       Version: Amazon Linux AMI release 2016.03
        
-       Mem:          1 GiB 
+       CPU cores:          1 (cat /proc/cpuinfo | grep -i cpu)
        
+       Mem:                995 (free -m) 
+       
+       Total disk space    7.8G (df -hl)
         
    (2) Application Instance
        
@@ -70,18 +71,18 @@ git push origin master
        
        Version : Ubuntu 14.04.4 LTS (head -n 1 /etc/issue )
        
-       Cpu cores       : 1 (cat /proc/cpuinfo | grep -i cpu)
+       Cpu cores              1 
        
-       Mem:           992  (free -m)
+       Mem:                   992
        
-       /dev/xvda1      7.8G (df -hl)
+       Total disk space       7.8G
 
 -----
 ##4. Setting a High-availibility load balancer
 
    For details go to /conf/Loadbalancer/nginx.conf for Linux users.md
    
-   reference :[LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
+   reference :[Loal Balance Hight Availability configuration](https://aws.amazon.com/articles/2127188135977316)
 
    
 -----
