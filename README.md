@@ -39,15 +39,23 @@ git push origin master
    /conf : Configure file of project
    /log : every service log file including nginx, apache2, and HA etc.
    /document : all description documentation of this project
+
 3. AWS VM description
    In this project, we use two type VM : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2"(for LB) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-9abea4fb"(for apache and file server).
    (1) LB Instance
+
    (2) Application Instance
+   
        Instance type : t2.micro
+       
        Sytem info : Linux version 3.13.0-83-generic (buildd@lgw01-55) (gcc version 4.8.2 (Ubuntu 4..2-19ubuntu1) ) #127-Ubuntu SMP Fri Mar 11 00:25:37 UTC 2016 (uname -a)
+       
        Version : Ubuntu 14.04.4 LTS (head -n 1 /etc/issue )
+       
        Cpu cores       : 1 (cat /proc/cpuinfo | grep -i cpu)
+       
        Mem:           992  (free -m)
+       
        /dev/xvda1      7.8G (df -hl)
 
 4. 
