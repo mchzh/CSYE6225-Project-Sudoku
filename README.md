@@ -68,7 +68,6 @@ git push origin master
    
 6. Install and configure file server and client
 
+   More details go to /conf/NFS/Server/README.md and /conf/NFS/Client/README.md
 
-(1) launch a VM (required size based not eh capacity model you have, it will be good if you submit it also in a separate file) (2) configure the VM with something (VNET, disk, etc). (3) on the development station (your Mac) do : 3.1, 3.2, 3.3….
-(4) how to download into github to your repo. (git pull….) (5) install some components e.g. php, apache nginx etc. (6) how to start your app/service. more importantly how to make it start automatically with no user push anything (etc/init.d …)
 
