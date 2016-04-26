@@ -8,4 +8,4 @@
 
 4. We use a shell script called vip_monitor.sh. A virtual IP monitor and takeover script (vip_monitor.sh).This script enables on 
 EC2 instance to monitor another EC2 instance and take over a private "virtual" IP address on instance failure.When used with two
-instances, the script enables an HA (High availability) scenario where instances monitor each other and take over a shared virtual IP address if the other instance fails.
+instances, the script enables an HA (High availability) scenario where instances monitor each other and take over a shared virtual IP address if the other instance fails. You can find the shell script in "src" folder
