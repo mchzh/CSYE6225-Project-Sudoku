@@ -83,7 +83,7 @@ NOTE:Choose the IAM role as the one that you have created in STEP 1 when launchi
 STEP 3: For the instance that you choose as a primay load balancer, right click the instance and select "Networking" and select "Manage private IP addresses".Select "Assign new IP" and click "Yes,Update". This new secondary private IP will act as the virtual IP that floats between the two load balancers. 
 
 STEP 4: In "EC2 Dashboard" under "NETWORK & SECURITY" click "Elastic IPs".Click on "Allocate New Address" and choose your 
-instances.By default an Elastic IP is allocated to the primary private IP of your primary load balancer, to assign an Elastic IP to the secondary private IP you click "ALlocate New Address" again and choose the primary load balancer.Repeat the above step for the secondary load balancer but only once since we did not assign any secondary private IP address
+instances.By default an Elastic IP is allocated to the primary private IP of your primary load balancer, to assign an Elastic IP to the secondary private IP you click "Allocate New Address" again and choose the primary load balancer.Repeat the above step for the secondary load balancer but only once since we did not assign any secondary private IP address
 	
 STEP 5: After step 4 access your instances and do the following:
 	
