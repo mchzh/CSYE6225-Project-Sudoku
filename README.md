@@ -37,3 +37,5 @@ https://gist.github.com/suziewong/4378619
 <font color=#00ffff size=72>color=#00ffff</font>
 
 <font color=gray size=72>color=gray</font>
+
+<font color="white">要反白的文字<font>
