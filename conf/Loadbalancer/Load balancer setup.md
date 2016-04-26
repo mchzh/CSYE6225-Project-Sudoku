@@ -27,7 +27,7 @@ Inside the nginx.conf file under the "http" section add the following lines:
         
         
         upstream backend{
-        server 172.31.xxx.xxx;  #insert the private ip address of your web servers
+        server 172.31.xxx.xxx;  #insert the private ip address of your backend servers
         server 172.31.xxx.xxx;
         }
         
