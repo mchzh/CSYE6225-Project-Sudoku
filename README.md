@@ -82,6 +82,8 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
        
        Total disk space       7.8G
 
+   (3) Except EC2, we use some component like VPC and IAM
+
 -----
 ##4. Setting a High-availibility load balancer
 
