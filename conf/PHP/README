@@ -1,0 +1,1 @@
+In order to avoid notice reporting of PHP, I modified the php.ini file by adding "& ~E_NOTICE" to the error_reporting so that the system will ignore such report.
