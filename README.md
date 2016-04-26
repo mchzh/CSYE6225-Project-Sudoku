@@ -43,6 +43,8 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
    /log :  Service log file 
    
    /document :  Description documents of the project
+   
+   /help :  technology solution, problem description and user guide
 
 -----
 ##3. AWS VM description
