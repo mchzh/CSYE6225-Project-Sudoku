@@ -98,7 +98,7 @@ Change to root directory
 cd /root
 	
 download the vip_monitor.sh script, and make it executable with the following commands:
-wget http://media.amazonwebservices.com/articles/vip_monitor_files/vip_monitor.sh
+```wget http://media.amazonwebservices.com/articles/vip_monitor_files/vip_monitor.sh```
 	
 change the permission on the file
 chmod a+x vip_monitor.sh
