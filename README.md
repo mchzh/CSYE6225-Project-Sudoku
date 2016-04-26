@@ -42,6 +42,7 @@ git push origin master
 
 3. AWS VM description
    In this project, we use two type VM : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type - ami-c229c0a2"(for LB) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-9abea4fb"(for apache and file server).
+   
    (1) LB Instance
 
    (2) Application Instance
