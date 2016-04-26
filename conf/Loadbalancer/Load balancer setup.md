@@ -38,7 +38,7 @@ Inside the nginx.conf file under the "http" section add the following lines:
   	
 Save the nginx.conf file after you have finished editing it. You need to restart the service for the changes to take place
 
-sudo service nginx restart
+```sudo service nginx restart```
         
 
 #####SETTING UP A HIGH-AVAILABILITY LOAD BALANCER:
