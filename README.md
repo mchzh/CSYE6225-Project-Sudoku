@@ -16,7 +16,7 @@ setup your git repo:
 
 ```git config --global user.email "youremail"```
 
-```git clone [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)```
+```git clone https://github.com/mchzh/CSYE6225-Project-Sudoku.git```
 
 ```cd CSYE6225-Project-Sudoku```
 
@@ -28,7 +28,7 @@ When you  want to upload any changes to your code:
 
 After you commit your changes, you must push your edited file to a remote repository:
 
-```git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)```
+git remote add origin [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sudoku.git)
 
 git push origin master
 
@@ -49,7 +49,7 @@ git push origin master
 
 -----
 ##3. AWS VM description
-   In this project, we use two types of Virtual machines : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type-ami-c229c0a2"(for Load Balancer) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type-ami-9abea4fb"(for apache and file server).
+   In this project, we use two types of Virtual machines : one is "Amazon Linux AMI 2016.03.0 (HVM), SSD Volume Type-ami-c229c0a2"(for Load Balancer) and another is "Ubuntu Server 14.04 LTS (HVM), SSD Volume Type-ami-9abea4fb"(for apache web server and file server).
    
    (1) Load Balancer Instance
        
@@ -77,18 +77,19 @@ git push origin master
        /dev/xvda1      7.8G (df -hl)
 
 -----
-##4. Set loadbalance high availibility
+##4. Setting a High-availibility load balancer
 
-   [LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
+   For details go to /conf/Loadbalancer/nginx.conf for Linux users.md
+   
+   reference :[LB HA install and setting](https://aws.amazon.com/articles/2127188135977316)
 
-   More details go to /conf/Loadbalancer/nginx.conf for Linux users.md
-
+   
 -----
-##5. Install and configure application
+##5. Install and configure the application on backend servers
  
 -----  
 ##6. Install and configure file server and client
 
-   More details go to /conf/NFS/Server/README.md and /conf/NFS/Client/README.md
+   For details go to /conf/NFS/Server/README.md and /conf/NFS/Client/README.md
 
 
