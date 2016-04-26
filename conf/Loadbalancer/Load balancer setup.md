@@ -108,14 +108,18 @@ another Amazon EC2 instance and take over a private "virtual" IP address on inst
 Edit the following variables to match your settings for primary load balancer:
 	
 HA_Node_IP - This should point to secondary load balancer primary private IP address.
+
 VIP - This should point to private virtual IP address that will float between the two load balancers.
+
 REGION - This should point to region where your load balancers are running (example :us-west-2).
 	
 Now connect to secondary load balancer and issue the same commands as you did previously on primary load balancer. 
 However, in this case, configure vip_monitor.sh with the following settings:
 	
 HA_Node_IP - This should point to primary load balancer primary private IP address.
+
 VIP - This should point to private virtual IP address that will float between the two primary load balancer    
+
 REGION - This should point to region where your load balancers are running (example :us-west-2).
 
 After completing all the above steps, you can test your setup by shutting down the primary load balancer. Once you shutdown the primary load balancer, the virtual IP address is allocated to the secondary load balancer and all the traffic is redirected to the secondary load balancer. Kindly check the "Testing your high availability load balancer" for reference.
