@@ -125,7 +125,7 @@ However, in this case, configure vip_monitor.sh with the following settings:
 
 After completing all the above steps, you can test your setup by shutting down the primary load balancer. Once you shutdown the primary load balancer, the virtual IP address is allocated to the secondary load balancer and all the traffic is redirected to the secondary load balancer. Kindly check the "Testing your high availability load balancer" for reference.
 
-**NOTE : If you want the load balancer to start automatically when the instance in run please look at /help/faq**
+**NOTE : If you want the load balancer to start automatically when the instance is run please look at /help/faq**
 
         
         
