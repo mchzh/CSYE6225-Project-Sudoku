@@ -11,4 +11,16 @@
     Reason: Although the file server set this share directory "rw" priviledge, but default require root_squash.
 
     Solution: In file server, open /etc/exports to edit this share direcotry and add no_root_squash option. Then sudo exportfs -a.
+    
+   3. Run nginx load balancer setup automatically when the instance is run
+      
+     open the file rc.local
+   
+      ```vi /etc/rc.local```
+
+      add the line 
+      
+      /etc/init.d/nginx start
+      
+      This will start the nginx load balancer as you start your instance
 
