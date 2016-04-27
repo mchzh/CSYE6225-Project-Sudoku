@@ -12,7 +12,8 @@
 
     Solution: In file server, open /etc/exports to edit this share direcotry and add no_root_squash option. Then sudo exportfs -a.
     
-   3. Run nginx load balancer setup automatically when the instance is run
+   
+  3. Run nginx load balancer setup automatically when the instance is run
       
      open the file rc.local
    
