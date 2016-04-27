@@ -1,0 +1,30 @@
+Capacity Testing Procedure:
+1. Connecting JMeter to the Virtual IP of Load Balancer and add “/appname”.
+2. We will monitoring the usage data of each server and increasing the threads in JMeter until each server reaches 100% CPU usage.
+3. Record the throughput data in JMeter.
+4. Use command "vmstat 3" to record the usage information of all the servers.
+
+RESULT:
+THREADS                THROUGHPUT             CPU USAGE OF EACH SERVER
+1                      4.5 per second               30%
+2                      9.0 per second               60%
+3                      13.1 per second              90%
+4                      15.0 per second              100%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Failure Tolerance Test:
+1. Running JMeter to access the application continuously
+2. Stop one server for several seconds and then restart it.
+3. Search the access.log files of each server to see the connections.
+
+RESULT:
+Before stopping one of the servers, the number of connections on an average for each server per second was calculated to be 4.6 connections per second.
+While we are stopping one of the servers, the total number of connections to the other two servers is about 5.4 connections per second and the instance that is being stopped has no connections. 
+(This indicates that the load balancer starts redirecting the traffic to the available servers)
+The number of connections on an average is 4.6 connections per second after the server has been restarted.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Backup Load Balancer Test:
+1. Running JMeter to access the application continuously
+2. Shutdown the primary load balancer. (we just want to show if one day our load balancer doesn’t work, whether the whole system will recover itself automatic)]
+3. Just after 9 seconds, whole system works again!
