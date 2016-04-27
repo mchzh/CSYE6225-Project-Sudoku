@@ -100,5 +100,7 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
 ##6. Install and configure file server and client
 
    For details go to /conf/NFS/Server/README.md and /conf/NFS/Client/README.md
+   [NFS Server](https://github.com/mchzh/CSYE6225-Project-Sudoku/blob/master/conf/NFS/Server/README.md)
+   [NFS Client](https://github.com/mchzh/CSYE6225-Project-Sudoku/blob/master/conf/NFS/Server/README.md)
 
 
