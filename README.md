@@ -101,6 +101,6 @@ git push origin master [SudokuGit](https://github.com/mchzh/CSYE6225-Project-Sud
 
    For details go to /conf/NFS/Server/README.md and /conf/NFS/Client/README.md
    [NFS Server](https://github.com/mchzh/CSYE6225-Project-Sudoku/blob/master/conf/NFS/Server/README.md)
-   [NFS Client](https://github.com/mchzh/CSYE6225-Project-Sudoku/blob/master/conf/NFS/Server/README.md)
+   [NFS Client](https://github.com/mchzh/CSYE6225-Project-Sudoku/blob/master/conf/NFS/Client/README.md)
 
 
