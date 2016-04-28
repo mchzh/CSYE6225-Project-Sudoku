@@ -10,9 +10,9 @@ Before we can begin, we need to install the necessary components on both our hos
 
 On the host server, we need to install the nfs-kernel-server package, which will allow us to share our directories. Since this is the first operation that we're performing with apt in this session, we'll refresh our local package index before the installation:
 
-  sudo apt-get update
+  /*sudo apt-get update*/
   
-  sudo apt-get install nfs-kernel-server
+  /*sudo apt-get install nfs-kernel-server*/
 
 Once these packages are installed, you can switch over to the client computer.
 
