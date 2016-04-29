@@ -6,8 +6,8 @@
 
 # High Availability IP variables
 # Other node's IP to ping and VIP to swap if other node goes down
-HA_Node_IP=
-VIP=
+HA_Node_IP=                  #Enter your private IP here
+VIP=                         #Enter the Virtual IP
 
 # Specify the EC2 region that this will be running in
 REGION=
