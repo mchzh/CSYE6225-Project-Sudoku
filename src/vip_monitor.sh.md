@@ -10,7 +10,7 @@ HA_Node_IP=                  #Enter your private IP here
 VIP=                         #Enter the Virtual IP
 
 # Specify the EC2 region that this will be running in
-REGION=
+REGION=                      #Enter the region where you instances are deployed
 
 # Run aws-apitools-common.sh to set up default environment variables and to
 # leverage AWS security credentials provided by EC2 roles
